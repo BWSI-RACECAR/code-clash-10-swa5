@@ -110,7 +110,7 @@ class Solution:
                 word_endings.append(words[j][-3:])
         
         for k in range(len(rhyme_amount)):
-            rhyme_count += rhyme_count[k]
+            rhyme_count += rhyme_amount[k]
 
         final_string = ""
 

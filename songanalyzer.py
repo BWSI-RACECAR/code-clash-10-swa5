@@ -40,6 +40,7 @@ class Solution:
         # return: string 
         
         # TODO: Write code below to return a string with the solution to the prompt
+        #works on finding the alliteration
         # words = lyric.split()
         # letterfreq = {}
         # for word in words:
@@ -47,18 +48,31 @@ class Solution:
         #          letterfreq[word[0]] = 0 
         #     letterfreq[word[0]] += 1
 
-        # alliteration = []
-        # for key in letterfreq:
-        #     if letterfreq[key] >= 2:
-        #         alliteration.append(str((key, '=', letterfreq[key])))
+        # alliteration = {}
 
-        # outputstring = ""
+        # for key in letterfreq: 
+        #     if letterfreq[key] > 1:
+        #         alliteration[key] = letterfreq[key]
+            
+        
+        # outstring = ""
 
-        # for i in range (len(alliteration)): 
-        #     outputstring += str((alliteration[i][2], alliteration[i][6], alliteration[i][6], ", "))
-        
-        
-        # return outputstring
+        # for key in alliteration: 
+        #     outstring += (key + "=" + str(alliteration[key]) + ",")
+
+        # #finds the rhyming words 
+        # rhyming = {}
+        # for word in words: 
+        #     if word[-3:] not in rhyming: 
+        #         rhyming[word[-3:]] = 1
+        #     rhyming[word[-3:]] +=1
+
+        # return rhyming
+            
+
+
+
+
 
         words = lyric.split(" ")
 
@@ -101,7 +115,7 @@ class Solution:
         final_string = ""
 
         for l in range(len(alit_letters)):
-            final_string = final_string+"{letter}={number}, ".format(letter = alit_letters[l], number=letter_count[1])
+            final_string = final_string+"{letter}={number}, ".format(letter = alit_letters[l], number=letter_count[l])
 
         return final_string + "{rhymes} rhyming words".format(rhymes=rhyme_count)
 
